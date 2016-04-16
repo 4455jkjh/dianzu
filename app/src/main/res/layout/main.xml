@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:gravity="top|center">
+
+	<View
+		android:background="?attr/colorPrimary"
+		android:layout_height="23dp"
+		android:layout_width="match_parent"
+		android:id="@+id/status"
+		android:visibility="gone"/>
+
+	<android.support.v7.widget.Toolbar
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:background="?attr/colorPrimary"
+		android:id="@+id/toolbar"
+		app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<Spinner
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:id="@+id/describe"/>
+
+		<View
+			android:background="?android:attr/dividerHorizontal"
+			android:layout_height="match_parent"
+			android:layout_width="1dp"/>
+
+		<Spinner
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0"
+			android:id="@+id/name"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:text="清空全部"
+			android:backgroundTint="?attr/colorAccent"
+			android:layout_weight="1.5"
+			android:id="@+id/qkqb"
+			android:onClick="onClick"/>
+
+	</LinearLayout>
+
+	<View
+		android:background="?android:attr/dividerVertical"
+		android:layout_height="1dp"
+		android:layout_width="match_parent"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="电阻："/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:inputType="numberDecimal"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:id="@+id/dianzu"
+			android:hint="在这里输入电阻"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:backgroundTint="?attr/colorAccent"
+			android:text="清空"
+			android:id="@+id/qkdz"
+			android:onClick="onClick"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="温度："/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:inputType="numberDecimal"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:id="@+id/wendu"
+			android:hint="在这里输入温度"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:backgroundTint="?attr/colorAccent"
+			android:text="清空"
+			android:id="@+id/qkwd"
+			android:onClick="onClick"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="基准："/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:inputType="numberDecimal"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:layout_weight="1.0"
+			android:gravity="center"
+			android:id="@+id/jizhun"
+			android:hint="在这里输入基准"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:backgroundTint="?attr/colorAccent"
+			android:text="清空"
+			android:id="@+id/qkjz"
+			android:onClick="onClick"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:id="@+id/bijiaozhi"
+		android:textSize="40sp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:id="@+id/wucha"
+		android:textSize="40sp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:id="@+id/hint"
+		android:textSize="30sp"/>
+
+</LinearLayout>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="PrimaryDark">#1976D2</color>
+	<color name="Primary">#2196F3</color>
+	<color name="Accent">#448AFF</color>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+		<item name="colorPrimaryDark">@color/PrimaryDark</item>
+		<item name="colorPrimary">@color/Primary</item>
+		<item name="colorAccent">@color/Accent</item>
+	</style>
+	<style name="Dialog" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+		<item name="colorPrimaryDark">@color/PrimaryDark</item>
+		<item name="colorPrimary">@color/Primary</item>
+		<item name="colorAccent">@color/Accent</item>
+		<item name="windowNoTitle">true</item>
+	</style>
+</resources>
