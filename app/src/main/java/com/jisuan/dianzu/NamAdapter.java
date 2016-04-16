@@ -21,6 +21,8 @@ public class NamAdapter extends ItemAdapter
 		Name.value=value.value;
 		m.jizhun.setText(Name.value+"");
 		m.setTitle(Name.NAME);
+		m.edit.putInt(MainActivity.sp_name1,p3);
+		m.edit.commit();
 	}
 
 	@Override

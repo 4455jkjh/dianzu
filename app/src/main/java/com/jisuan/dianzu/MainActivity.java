@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity implements TextWatcher,View.
 	private static final String sp_dianzu="dianzu";
 	private static final String sp_wendu="wendu";
 	private static final String sp_jizhun="jizhun";
+	public static final String sp_describe="describe";
+	public static final String sp_name1="name";
 	private SharedPreferences spr;
-	private SharedPreferences.Editor edit;
+	public SharedPreferences.Editor edit;
 
 	Button qkqb,qkdz,qkwd,qkjz;
 	Vibrator vib;
@@ -77,14 +79,17 @@ public class MainActivity extends AppCompatActivity implements TextWatcher,View.
 		refresh();
 		describe.setAdapter(des);
 		name.setAdapter(nam);
-		dianzu.setText(spr.getString(sp_dianzu,""));
-		wendu.setText(spr.getString(sp_wendu,""));
-		jizhun.setText(spr.getString(sp_jizhun,jizhun.getText().toString()));
+		dianzu.setText(spr.getString(sp_dianzu, ""));
+		wendu.setText(spr.getString(sp_wendu, ""));
+		jizhun.setText(spr.getString(sp_jizhun, jizhun.getText().toString()));
+		describe.setSelection(spr.getInt(sp_describe,0));
+		name.setSelection(spr.getInt(sp_name1,0));
 	}
 	public void refresh()
 	{
 		des.reset();
 		nam.reset();
+		add.adapter.reset();
 		for (cursor.moveToFirst();!cursor.isAfterLast();cursor.moveToNext())
 		{
 			String des=cursor.getString(Value.d);
@@ -93,9 +98,11 @@ public class MainActivity extends AppCompatActivity implements TextWatcher,View.
 			int area=cursor.getInt(Value.a);
 			this.des.put(des, na, val, area);
 			nam.put(des, na, val, area);
+			add.adapter.put(des, na, val, area);
 		}
 		nam.notifyDataSetChanged();
 		des.notifyDataSetChanged();
+		add.adapter.notifyDataSetChanged();
 		//new AddDialog(this).show();
     }
 	private  void initView()
@@ -163,13 +170,14 @@ public class MainActivity extends AppCompatActivity implements TextWatcher,View.
 			hi = "";
 		hint.setText("");
 		hint.setText(hi);
-		put(sp_dianzu,dz);
-		put(sp_wendu,wd);
-		put(sp_jizhun,jz);
+		put(sp_dianzu, dz);
+		put(sp_wendu, wd);
+		put(sp_jizhun, jz);
 		edit.commit();
 	}
-	private void put(String n,float f){
-		edit.putString( n,f+"");
+	private void put(String n, float f)
+	{
+		edit.putString(n, f + "");
 	}
 	@Override
 	public void beforeTextChanged(CharSequence p1, int p2, int p3, int p4)

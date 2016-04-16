@@ -13,6 +13,12 @@
 		android:id="@+id/toolbar1"
 		app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:text="生产线体："/>
+
 	<Spinner
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
@@ -33,22 +39,43 @@
 			android:layout_height="wrap_content"
 			android:layout_width="match_parent"
 			android:ems="10"
-			android:id="@+id/describe"/>
+			android:id="@+id/describe"
+			android:gravity="center"/>
 
 	</LinearLayout>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:text="机种："/>
 
 	<EditText
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:ems="10"
-		android:id="@+id/name"/>
+		android:id="@+id/name"
+		android:gravity="center"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:text="基准："/>
 
 	<EditText
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
 		android:ems="10"
 		android:id="@+id/value"
-		android:inputType="numberDecimal"/>
+		android:inputType="numberDecimal"
+		android:gravity="center"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:text="范围："/>
 
 	<Spinner
 		android:layout_height="wrap_content"

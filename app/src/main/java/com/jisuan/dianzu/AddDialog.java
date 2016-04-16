@@ -19,22 +19,8 @@ import android.view.KeyEvent;
 
 public class AddDialog extends AppCompatDialog implements View.OnClickListener,CompoundButton. OnCheckedChangeListener
 {
-
-	@Override
-	public void onCheckedChanged(CompoundButton p1, boolean p2)
-	{
-		describe.setEnabled(p2);
-	}
-
 	Sqlite sqlite;
 	ad da;
-	public AddDialog(MainActivity c, Sqlite sqlite)
-	{
-		super(c, R.style.Dialog);
-		this.sqlite = sqlite;
-		da = new ad(c);
-		m=c;
-	}
 	private static final List<Value> a;
 	Button cancle,ok;
 	Toolbar toolbar;
@@ -43,6 +29,8 @@ public class AddDialog extends AppCompatDialog implements View.OnClickListener,C
 	int area_v;
 	MainActivity m;
 	Spinner des,area;
+	public dd adapter;
+
 	static{
 		a = new ArrayList<Value>();
 		Value v1,v2;
@@ -52,6 +40,21 @@ public class AddDialog extends AppCompatDialog implements View.OnClickListener,C
 		v2.name = "-4%~10%";
 		a.add(v1);
 		a.add(v2);
+	}
+	@Override
+	public void onCheckedChanged(CompoundButton p1, boolean p2)
+	{
+		describe.setEnabled(p2);
+		des.setEnabled(!p2);
+	}
+
+	public AddDialog(MainActivity c, Sqlite sqlite)
+	{
+		super(c, R.style.Dialog);
+		this.sqlite = sqlite;
+		da = new ad(c);
+		m = c;
+		adapter = new dd(c);
 	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -76,6 +79,8 @@ public class AddDialog extends AppCompatDialog implements View.OnClickListener,C
 		cb.setOnCheckedChangeListener(this);
 		area.setAdapter(da);
 		area.setOnItemSelectedListener(da);
+		des.setAdapter(adapter);
+		des.setOnItemSelectedListener(adapter);
 	}
 
 	@Override
@@ -87,15 +92,17 @@ public class AddDialog extends AppCompatDialog implements View.OnClickListener,C
 				dismiss();
 				break;
 			case R.id.ok:
-				String des=cb.isChecked() ? describe.getText().toString() : "";
+				String des=describe.getText().toString();
 				String name=this.name.getText().toString();
 				String value=this.value.getText().toString();
-				put(des,name,value);
+				put(des, name, value);
 				break;
 		}
 	}
-	public void put(String de,String na,String va){
-		if(de.equals("")||na.equals("")||va.equals("")){
+	public void put(String de, String na, String va)
+	{
+		if (de.equals("") || na.equals("") || va.equals(""))
+		{
 			m.vibrate(100);
 			return;
 		}
@@ -162,6 +169,63 @@ public class AddDialog extends AppCompatDialog implements View.OnClickListener,C
 		public void put(String des, String name, float value, int area)
 		{
 			// TODO: Implement this method
+		}
+	}
+	class dd extends ItemAdapter
+	{
+		List<Value> vl;
+		@Override
+		public void onItemSelected(AdapterView<?> p1, View p2, int p3, long p4)
+		{
+			// TODO: Implement this method
+			describe.setText(vl.get(p3).name);
+		}
+
+		@Override
+		public void onNothingSelected(AdapterView<?> p1)
+		{
+			// TODO: Implement this method
+		}
+
+		@Override
+		public void reset()
+		{
+			// TODO: Implement this method
+			vl.removeAll(vl);
+		}
+
+		@Override
+		public List<Value> getList()
+		{
+			// TODO: Implement this method
+			return vl;
+		}
+
+		@Override
+		public void setText(TextView tv, int index)
+		{
+			// TODO: Implement this method
+			tv.setText(vl.get(index).name);
+		}
+
+		@Override
+		public void put(String des, String name, float value, int area)
+		{
+			// TODO: Implement this method
+			for (Value va:vl)
+			{
+				if (va.name.equals(des))
+					return;
+			}
+			Value v=new Value();
+			v.name = des;
+			vl.add(v);
+		}
+
+		public dd(MainActivity m)
+		{
+			super(m);
+			vl = new ArrayList<Value>();
 		}
 	}
 }

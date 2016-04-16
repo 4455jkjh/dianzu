@@ -16,6 +16,9 @@ public class DesAdapter extends ItemAdapter
 		Name.DESCRIBE=list.get(p3).name;
 		m.toolbar.setSubtitle(Name.DESCRIBE);
 		m.nam.notifyDataSetChanged();
+		m.edit.putInt(MainActivity.sp_name1,0);
+		m.edit.putInt(MainActivity.sp_describe,p3);
+		m.edit.commit();
 	}
 
 	@Override
