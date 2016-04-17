@@ -1,28 +1,19 @@
 package com.jisuan.dianzu;
-import android.content.Context;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatDialog;
+import android.os.*;
+import android.support.v7.app.*;
+import android.support.v7.widget.*;
+import android.view.*;
+import android.widget.*;
+import java.util.*;
+
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.CheckBox;
-import android.widget.TextView;
-import java.util.List;
-import android.widget.AdapterView;
-import android.widget.Adapter;
-import java.util.ArrayList;
-import android.widget.CompoundButton;
-import android.widget.Spinner;
-import android.view.KeyEvent;
 
 public class AddDialog extends AppCompatDialog implements View.OnClickListener,CompoundButton. OnCheckedChangeListener
 {
 	Sqlite sqlite;
 	ad da;
 	private static final List<Value> a;
-	Button cancle,ok;
+	AppCompatButton cancle,ok;
 	Toolbar toolbar;
 	EditText describe,name,value;
 	CheckBox cb;
@@ -65,8 +56,8 @@ public class AddDialog extends AppCompatDialog implements View.OnClickListener,C
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.dialog);
 		toolbar = (Toolbar) findViewById(R.id.toolbar1);
-		cancle = (Button) findViewById(R.id.cancle);
-		ok = (Button)findViewById(R.id.ok);
+		cancle = (AppCompatButton)  findViewById(R.id.cancle);
+		ok = (AppCompatButton)findViewById(R.id.ok);
 		describe = (EditText) findViewById(R.id.describe);
 		name = (EditText) findViewById(R.id.name);
 		value = (EditText) findViewById(R.id.value);

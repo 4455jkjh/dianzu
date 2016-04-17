@@ -7,5 +7,7 @@
 		android:icon="@android:drawable/ic_menu_add"
 		app:showAsAction="always"
         android:title="添加机种"/>
-    
+    <item
+        android:id="@+id/exit"
+        android:title="退出"/>
 </menu>

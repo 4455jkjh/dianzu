@@ -243,6 +243,9 @@ public class MainActivity extends AppCompatActivity implements TextWatcher,View.
 			case R.id.add:
 				add.show();
 				return true;
+			case R.id.exit:
+				finish();
+				return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

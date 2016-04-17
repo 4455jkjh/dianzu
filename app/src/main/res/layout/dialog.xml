@@ -87,18 +87,18 @@
 		android:layout_width="match_parent"
 		android:orientation="horizontal">
 
-		<Button
+		<android.support.v7.widget.AppCompatButton
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:backgroundTint="?attr/colorAccent"
+			app:backgroundTint="?attr/colorAccent"
 			android:text="取消"
 			android:layout_weight="1.0"
 			android:id="@+id/cancle"/>
 
-		<Button
+		<android.support.v7.widget.AppCompatButton
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:backgroundTint="?attr/colorAccent"
+			app:backgroundTint="?attr/colorAccent"
 			android:text="确定"
 			android:layout_weight="1.0"
 			android:id="@+id/ok"/>
